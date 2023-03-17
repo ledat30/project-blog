@@ -23,7 +23,7 @@ class WebController extends Controller
 
             return view('Web.home.home' , compact('highlight','new'));
         }
-
+      //chức năng chia sẻ
         function __construct()
         {
             $conten = ContentBanner::all();
