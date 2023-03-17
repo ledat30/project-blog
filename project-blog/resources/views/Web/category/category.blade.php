@@ -48,7 +48,8 @@
                                         </div><!-- end blog-box -->
                                     </div><!-- end col -->
                                 @endforeach
-                            </div><!-- end row --> {{ $posts->links() }}
+                                    {{ $posts->links()}}
+                            </div><!-- end row -->
                         </div><!-- end blog-grid-system -->
                     </div><!-- end page-wrapper -->
                 </div><!-- end col -->

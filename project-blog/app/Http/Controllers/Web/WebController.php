@@ -63,7 +63,7 @@ class WebController extends Controller
 
         public function category()
         {
-            $posts = Post::simplePaginate(6);
+            $posts = Post::simplePaginate(4);
             $categories = Category::all();
             return view('web.category.category', compact('posts', 'categories'));
         }
@@ -71,7 +71,7 @@ class WebController extends Controller
         public function categorySlug($slug)
         {
             $category = Category::where('slug' , $slug)->first();
-                $posts = Post::where('category_id', $category->id)->simplePaginate(6);
+            $posts = Post::where('category_id', $category->id);
             $categories = Category::all();
             return view('web.category.category', compact('posts', 'categories'));
         }
