@@ -27,7 +27,6 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
-                            {{--                            id="datatable-buttons"--}}
                             <table class="table table-striped table-bordered" id="datatable-buttons" style="width:100%">
                                 <thead>
                                 <tr align="center">
@@ -35,10 +34,9 @@
                                     <th>Title</th>
                                     <th>Image</th>
                                     <th>Category</th>
-                                    <th>Author</th>
-                                    <th>View counts</th>
-                                    <th>New post</th>
-                                    <th>Highlight post</th>
+                                    <th>View </th>
+                                    <th>Highlight </th>
+                                    <th>Status</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                     <th>Detail</th>
@@ -49,12 +47,17 @@
                                     <tr class="even gradeC" align="center">
                                         <td>{{$post->id }}</td>
                                         <td>{{$post->title }}</td>
-                                         <td><img src="{{$post->imageUrl()}}" alt="" width="50px" height="auto"></td>
+                                        <td><img src="{{$post->imageUrl()}}" alt="" width="50px" height="auto"></td>
                                         <td>{{$post->category->name }}</td>
-                                        <td>{{$post->user->name}}</td>
                                         <td>{{$post->view_counts}}</td>
-                                        <td>{{$post->new_post == 1 ? "✅" : "❌"}}</td>
                                         <td>{{$post->highlight_post == 1 ? "✅" : "❌" }}</td>
+                                        <td>
+                                            @if($post->status == 0)
+                                                {{ "Ẩn" }}
+                                            @elseif($post->status == 1)
+                                                {{"Hiển thị"}}
+                                            @endif
+                                        </td>
                                         <td>
                                             <a href="{{route('admin.post.edit', $post->id) }}">
                                                 <button class="btn btn-warning ">Edit</button>
@@ -74,8 +77,6 @@
                                 @endforeach
                                 </tbody>
                             </table>
-                            {{--phân trang--}}
-                            {!! $posts->links() !!}
                         </div>
                     </div>
                 </div>

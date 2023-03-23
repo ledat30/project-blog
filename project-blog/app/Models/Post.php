@@ -20,6 +20,7 @@ class Post extends Model
         'slug',
         'category_id',
         'highlight_post',
+        'status',
     ];
 
     public function user()

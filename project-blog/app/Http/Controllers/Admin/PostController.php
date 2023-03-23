@@ -13,7 +13,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::paginate(20);
+        $posts = Post::all();
 
         return view('admin.post.index', compact('posts'));
     }
@@ -75,6 +75,7 @@ class PostController extends Controller
             'slug' => $slug,
             'category_id' => $request->category_id,
             'highlight_post' => $request->highlight_post ? 1 : 0,
+            'status'=>$request->status,
         ]);
 
         return redirect()->route('admin.post.index')->with('success', 'create successfully');
@@ -134,6 +135,7 @@ class PostController extends Controller
             'new_post' => $request->new_post ? 1 : 0,
             'slug' => $slug,
             'highlight_post' => $request->highlight_post ? 1 : 0,
+            'status'=>$request->status,
         ]);
 
         return redirect()->route('admin.post.index', $id)->with('success', 'Update successfully');
