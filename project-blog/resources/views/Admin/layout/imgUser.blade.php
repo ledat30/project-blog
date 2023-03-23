@@ -6,9 +6,12 @@
         <nav class="nav navbar-nav">
             <ul class=" navbar-right">
                 <li class="nav-item dropdown open" style="padding-left: 15px;">
+                    @if(\Illuminate\Support\Facades\Auth::user())
                     <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                        <img src="{{asset('https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg')}}" alt="">
+                        <img src="{{\Illuminate\Support\Facades\Auth::user()->imageURL()}}" alt="">
+                        {{\Illuminate\Support\Facades\Auth::user()->name}}
                     </a>
+                    @endif
                     <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item"  href="{{route('admin.profile.index')}}"> Profile</a>
                         <a class="dropdown-item"  href="{{route('admin.logout')}}"><i class="fa fa-sign-out pull-right"></i> Log Out</a>

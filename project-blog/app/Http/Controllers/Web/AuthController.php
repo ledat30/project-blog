@@ -26,7 +26,7 @@ class AuthController extends Controller
     {
         return view('web.auth.profile');
     }
-    public function updateProfile(Request $request)
+    public function updateprofile(Request $request)
     {
         $this->validate($request, [
             'name' => 'required',
@@ -47,7 +47,7 @@ class AuthController extends Controller
         }
 
         $user->update($data);
-        return redirect()->route('admin.profile.index')->with('success', 'Updated successfully');
+        return redirect()->route('web.profile')->with('success', 'Updated successfully');
     }
     public function formRegistration(){
         return view('web.auth.login');

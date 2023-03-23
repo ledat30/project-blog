@@ -135,7 +135,7 @@ use Illuminate\Support\Facades\Route;
             ->name('registration.web');
         Route::get('profile', [\App\Http\Controllers\Web\AuthController::class , 'profile'])
             ->name('web.profile');
-        Route::put('profile', [\App\Http\Controllers\Admin\AuthController::class, 'updateProfile'])
+        Route::put('profile', [\App\Http\Controllers\Web\AuthController::class, 'updateprofile'])
             ->name('admin.profile.update');
 
         Route::get('search',[\App\Http\Controllers\Web\WebController::class , 'search']);

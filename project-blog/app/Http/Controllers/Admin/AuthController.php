@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -45,6 +46,7 @@ class AuthController extends Controller
             'name' => $request->name,
         ];
 
+
         if ($request->password) {
             $this->validate($request, [
                 'password' => 'required|min:6|max:32',
@@ -54,7 +56,7 @@ class AuthController extends Controller
         }
 
         $user->update($data);
-        return redirect()->route('web.profile')->with('success', 'Updated successfully');
+        return redirect()->route('admin.profile.index')->with('success', 'Updated successfully');
     }
 }
 
