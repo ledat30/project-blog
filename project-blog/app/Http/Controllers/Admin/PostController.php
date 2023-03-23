@@ -7,6 +7,9 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -153,5 +156,15 @@ class PostController extends Controller
         return view('admin.post.detail-post',[
             'posts'=>$post,
         ]);
+    }
+
+    public function unactive($id){
+        DB::table('posts')->where('id',$id)->update(['status' => 1]);
+        return redirect()->route('admin.post.index')->with('success', 'Kích hoạt bài viết thành công');
+    }
+
+    public function active($id){
+        DB::table('posts')->where('id',$id)->update(['status' => 0]);
+        return redirect()->route('admin.post.index')->with('success', 'Không kích hoạt bài viết thành công');
     }
 }

@@ -53,6 +53,10 @@ use Illuminate\Support\Facades\Route;
             ->name('admin.post.delete');
         Route::get('detail/{id}',[\App\Http\Controllers\Admin\PostController::class,'detail'])
             ->name('DetailPost');
+        Route::get('unactive/{id}',[\App\Http\Controllers\Admin\PostController::class,'unactive'])
+            ->name('unactive.post');
+        Route::get('active/{id}',[\App\Http\Controllers\Admin\PostController::class,'active'])
+            ->name('active.post');
     });
 
         Route::prefix('slide')->group(function () {
