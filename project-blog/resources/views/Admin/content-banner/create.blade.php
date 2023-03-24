@@ -34,6 +34,15 @@
                             <label>Content</label>
                             <textarea id="content" name="content" class="ckeditor"></textarea>
                         </div>
+                        <div>
+                            <label>Status : </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="flat" name="status" value="1" /> Hiện
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" class="flat" name="status" value="0" /> Ẩn
+                            </label>
+                        </div>
                         <button type="submit" class="btn btn-danger">Add</button>
                         <button type="reset" class="btn btn-info">Reset</button>
                     </form>

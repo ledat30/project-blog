@@ -13,6 +13,7 @@ class ContentBanner extends Model
         'content',
         'name',
         'title',
+        'status',
     ];
     public function detail($id){
         $contents = DB::table('content_banners')

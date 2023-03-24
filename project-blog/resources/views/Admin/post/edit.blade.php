@@ -70,8 +70,8 @@
                             <label>Content</label>
                             <textarea id="content" name="content" class="ckeditor">{!! $post->content !!}</textarea>
                         </div>
-                        <div >
-                            <label>Role : </label>
+                        <div>
+                            <label>Status : </label>
                             <label class="radio-inline">
                                 <input name="status" class="flat" value="0" @if($post->status) checked @endif type="radio"> Ẩn
                             </label>

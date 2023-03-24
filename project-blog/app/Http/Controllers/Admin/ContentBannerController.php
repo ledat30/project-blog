@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ContentBanner;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ContentBannerController extends Controller
 {
@@ -33,6 +34,7 @@ class ContentBannerController extends Controller
             'name' => $request->name,
             'title' => $request->title,
             'content' => $request->get('content'),
+            'status'=>$request->status,
         ]);
 
         return redirect()->route('admin.content.index')->with('success', 'create successfully');
@@ -59,6 +61,7 @@ class ContentBannerController extends Controller
             'name' => $request->name,
             'title' => $request->title,
             'content' => $request->get('content'),
+            'status'=>$request->status,
         ]);
 
         return redirect()->route('admin.content.index', $id)->with('success', 'Update successfully');
@@ -76,5 +79,15 @@ class ContentBannerController extends Controller
         return view('admin.content-banner.detail-content',[
             'contens'=>$content,
         ]);
+    }
+
+    public function unactive($id){
+        DB::table('content_banners')->where('id',$id)->update(['status' => 1]);
+        return redirect()->route('admin.content.index')->with('success', 'Kích hoạt content thành công');
+    }
+
+    public function active($id){
+        DB::table('content_banners')->where('id',$id)->update(['status' => 0]);
+        return redirect()->route('admin.content.index')->with('success', 'Không kích hoạt content thành công');
     }
 }

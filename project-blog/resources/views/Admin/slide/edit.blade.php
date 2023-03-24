@@ -38,6 +38,16 @@
                             <label>Image</label>
                             <input type="file" class="form-control" name="image" accept="image/*" />
                         </div>
+                        <div>
+                            <label>Status : </label>
+                            <label class="radio-inline">
+                                <input name="status" class="flat" value="0" @if($slide->status) checked @endif type="radio"> Ẩn
+                            </label>
+                            &nbsp;
+                            <label class="radio-inline">
+                                <input name="status" class="flat" value="1" @if($slide->status) checked @endif type="radio"> Hiện
+                            </label>
+                        </div>
                         <button type="submit" class="btn btn-danger">Update</button>
                     </form>
                 </div>

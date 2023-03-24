@@ -72,6 +72,10 @@ use Illuminate\Support\Facades\Route;
                 ->name('admin.slide.update');
             Route::get('delete/{id}', [\App\Http\Controllers\Admin\SlideController::class, 'delete'])
                 ->name('admin.slide.delete');
+            Route::get('unactive/{id}',[\App\Http\Controllers\Admin\SlideController::class,'unactive'])
+                ->name('unactive.slide');
+            Route::get('active/{id}',[\App\Http\Controllers\Admin\SlideController::class,'active'])
+                ->name('active.slide');
         });
 
         Route::prefix('content-banner')->group(function () {
@@ -89,6 +93,10 @@ use Illuminate\Support\Facades\Route;
                 ->name('admin.content.delete');
             Route::get('detail/{id}',[\App\Http\Controllers\Admin\ContentBannerController::class,'detail'])
                 ->name('DetailContent');
+            Route::get('unactive/{id}',[\App\Http\Controllers\Admin\ContentBannerController::class,'unactive'])
+                ->name('unactive.content');
+            Route::get('active/{id}',[\App\Http\Controllers\Admin\ContentBannerController::class,'active'])
+                ->name('active.content');
         });
 
     Route::prefix('contact')->group(function () {

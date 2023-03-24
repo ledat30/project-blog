@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Slide;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class SlideController extends Controller
@@ -50,6 +51,7 @@ class SlideController extends Controller
         Slide::create([
             'image' => $image,
             'name' => $request->name,
+            'status'=>$request->status,
         ]);
 
         return redirect()->route('admin.slide.index')->with('success', 'create successfully');
@@ -91,6 +93,7 @@ class SlideController extends Controller
         $slide->update([
             'name' => $request->name,
             'image' => isset($image) ? $image : $slide->image,
+            'status'=>$request->status,
         ]);
 
         return redirect()->route('admin.slide.index', $id)->with('success', 'Update successfully');
@@ -100,5 +103,15 @@ class SlideController extends Controller
     {
         Slide::find($id)->delete();
         return redirect()->route('admin.slide.index')->with('success', 'deleted successfully');
+    }
+
+    public function unactive($id){
+        DB::table('slides')->where('id',$id)->update(['status' => 1]);
+        return redirect()->route('admin.slide.index')->with('success', 'Kích hoạt slide thành công');
+    }
+
+    public function active($id){
+        DB::table('slides')->where('id',$id)->update(['status' => 0]);
+        return redirect()->route('admin.slide.index')->with('success', 'Không kích hoạt slide thành công');
     }
 }

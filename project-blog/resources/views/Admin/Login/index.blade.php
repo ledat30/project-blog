@@ -104,8 +104,8 @@
         display: block;
         width: 100%;
         text-align: center;
-        font-size: 19px;
-        font-weight: 400;
+        font-size: 25px;
+        font-weight: 420;
     }
 
     .right .right-inductor{
@@ -161,8 +161,8 @@
     </div>
     <div class="right">
         <div class="right-text">
-            <h2>Personal Blog</h2>
-            <h5></h5>
+            <h2>Personal Blog </h2>
+            <h5>Admin Page</h5>
         </div>
     </div>
 </div>
