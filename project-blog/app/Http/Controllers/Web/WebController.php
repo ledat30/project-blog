@@ -64,7 +64,7 @@ class WebController extends Controller
         ]);
             return Redirect::back();
         }
-        
+
     public function category()
     {
         $posts = Post::simplePaginate(6);
