@@ -10,9 +10,8 @@
                     <div class="sidebar">
                         <div class="widget">
                             <ul class="list-group" id="menu">
-                                <li  class="list-group-item menu active">Menu</li>
-                                <li class="list-group-item menu1">
-                                    <h4><a style="color: #2aabd2" href="{{route('category.web')}}">Home</a></h4>
+                                <li  class="list-group-item menu active">
+                                    <a style="color: white" href="{{route('category.web')}}">Menu</a>
                                 </li>
                                 @foreach($categories as $category)
                                     <li  class="list-group-item menu">
@@ -55,7 +54,6 @@
                 </div><!-- end col -->
             </div><!-- end row -->
         </div><!-- end container -->
-
     </section>
     @include('Web.layout-web.back')
 @endsection

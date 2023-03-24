@@ -50,10 +50,9 @@
                             <div class="blog-title-area">
                                 <div class="tag-cloud-single">
                                     <span>Tags</span>
-                                    <small><a href="#" title="">lifestyle</a></small>
-                                    <small><a href="#" title="">colorful</a></small>
-                                    <small><a href="#" title="">trending</a></small>
-                                    <small><a href="#" title="">another tag</a></small>
+                                    @foreach($tag as $tags)
+                                    <small><a href="{{route('category.web')}}" >{{$tags->name}}</a></small>
+                                    @endforeach
                                 </div><!-- end meta -->
 
                                 <div class="post-sharing">

@@ -235,39 +235,6 @@
                                             </fieldset>
                                         </form>
                                     </div><!-- end media -->
-                                    <hr class="invis">
-                                    <hr>
-                                    <br>
-
-                                    <div class="widget">
-                                        <h2 class="widget-title">Follow Us</h2>
-
-                                        <div class="row text-center">
-                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                <a href="https://www.facebook.com/le.dat.1276487" target="_blank" class="social-button facebook-button">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                <a href="#" class="social-button twitter-button">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                <a href="#" class="social-button google-button">
-                                                    <i class="fa fa-google-plus"></i>
-                                                </a>
-                                            </div>
-
-                                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                                                <a href="#" class="social-button youtube-button">
-                                                    <i class="fa fa-youtube"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div><!-- end widget -->
                                 </div><!-- end sidebar -->
                             </div><!-- end col -->
                         </div><!-- end row -->

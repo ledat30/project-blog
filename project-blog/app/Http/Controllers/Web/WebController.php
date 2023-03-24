@@ -29,9 +29,12 @@ class WebController extends Controller
             $conten = ContentBanner::all();
             $slide = Slide::all();
             $category = Category::all();
+            $tag = Category::take(5)->get();
+
             view()->share('slide',$slide);
             view()->share('conten',$conten);
             view()->share('category',$category);
+            view()->share('tag',$tag);
 
             if (Auth::check())
             {
@@ -45,6 +48,7 @@ class WebController extends Controller
                 'view_counts'=>$post->view_counts+1
             ]);
             $relate = Post::where('category_id',$post->category_id)->take(2)->inRandomOrder()->get();
+            //post right in detail
             $highlight = Post::where('highlight_post' ,1 )
                 ->take(5)->get();
 
@@ -60,22 +64,21 @@ class WebController extends Controller
         ]);
             return Redirect::back();
         }
+        
+    public function category()
+    {
+        $posts = Post::simplePaginate(6);
+        $categories = Category::all();
+        return view('web.category.category', compact('posts', 'categories'));
+    }
 
-        public function category()
-        {
-            $posts = Post::simplePaginate(4);
-            $categories = Category::all();
-            return view('web.category.category', compact('posts', 'categories'));
-        }
-
-        public function categorySlug($slug)
-        {
-            $category = Category::where('slug' , $slug)->first();
-            $posts = Post::where('category_id', $category->id);
-            $categories = Category::all();
-            return view('web.category.category', compact('posts', 'categories'));
-        }
-
+    public function categorySlug($slug)
+    {
+        $category = Category::where('slug' , $slug)->first();
+        $posts = Post::where('category_id', $category->id)->simplePaginate(6);
+        $categories = Category::all();
+        return view('web.category.category', compact('posts', 'categories'));
+    }
         public function contact()
         {
             return view('web.contact.contact');
