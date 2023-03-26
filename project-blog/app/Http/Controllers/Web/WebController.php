@@ -21,20 +21,21 @@ class WebController extends Controller
 
             $new = Post::where('new_post' , 1 )->take(3)->get();
 
-            return view('Web.home.home' , compact('highlight','new'));
+            $baiviet = Post::take(7)->get();
+
+            return view('Web.home.home' , compact('highlight','new','baiviet'));
         }
       //chức năng chia sẻ
         function __construct()
         {
             $conten = ContentBanner::all();
             $slide = Slide::all();
+            //chia sẻ danh mục left
             $category = Category::all();
-            $tag = Category::take(5)->get();
 
             view()->share('slide',$slide);
             view()->share('conten',$conten);
             view()->share('category',$category);
-            view()->share('tag',$tag);
 
             if (Auth::check())
             {
@@ -47,12 +48,15 @@ class WebController extends Controller
             $post->update([
                 'view_counts'=>$post->view_counts+1
             ]);
+
+            $tags = Post::where('category_id',$post->category_id)->take(2)->inRandomOrder()->get();
+
             $relate = Post::where('category_id',$post->category_id)->take(2)->inRandomOrder()->get();
             //post right in detail
             $highlight = Post::where('highlight_post' ,1 )
                 ->take(5)->get();
 
-            return view('web.post.post',compact('post','relate','highlight'));
+            return view('web.post.post',compact('post','relate','highlight','tags'));
         }
 
         public function comment(Request $request, $id)

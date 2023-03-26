@@ -50,8 +50,8 @@
                             <div class="blog-title-area">
                                 <div class="tag-cloud-single">
                                     <span>Tags</span>
-                                    @foreach($tag as $tags)
-                                    <small><a href="{{route('category.web')}}" >{{$tags->name}}</a></small>
+                                    @foreach($tags as $tag)
+                                    <small><a href="{{route('post.web', $tag->slug)}}" >{{$tag->title}}</a></small>
                                     @endforeach
                                 </div><!-- end meta -->
 
