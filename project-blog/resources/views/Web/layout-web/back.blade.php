@@ -6,6 +6,9 @@
         z-index: 99;
         -webkit-transform: translateZ(0);
     }
+    html{
+        scroll-behavior: smooth;
+    }
     #back-top a {
         width: 58px;
         height: 58px;
@@ -19,7 +22,7 @@
         background: 0 0;
         border: 2px solid #00bbd3;
     }
-    #back-top a>span:before {
+    #back-top a span:before {
         content: "\f106";
     }
 </style>

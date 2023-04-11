@@ -76,27 +76,27 @@
 
             <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                 <div class="sidebar">
-                    <div class="widget">
-                        <h2 class="widget-title" style="color: #1c22ab">Related Articles</h2>
+{{--                    <div class="widget">--}}
+{{--                        <h2 class="widget-title" style="color: #1c22ab">Related Articles</h2>--}}
 
-                        <div class="trend-videos">
-                            <div class="blog-box">
-                                <div class="post-media">
-                                    <a href="tech-single.html" title="">
-                                        <img src="upload/tech_video_01.jpg" alt="" class="img-fluid">
-                                        <div class="hovereffect">
-                                            <span class="videohover"></span>
-                                        </div><!-- end hover -->
-                                    </a>
-                                </div><!-- end media -->
-                                <div class="blog-meta">
-                                    <h4><a href="tech-single.html" title="">We prepared the best 10 laptop presentations for you</a></h4>
-                                </div><!-- end meta -->
-                            </div><!-- end blog-box -->
+{{--                        <div class="trend-videos">--}}
+{{--                            <div class="blog-box">--}}
+{{--                                <div class="post-media">--}}
+{{--                                    <a href="tech-single.html" title="">--}}
+{{--                                        <img src="upload/tech_video_01.jpg" alt="" class="img-fluid">--}}
+{{--                                        <div class="hovereffect">--}}
+{{--                                            <span class="videohover"></span>--}}
+{{--                                        </div><!-- end hover -->--}}
+{{--                                    </a>--}}
+{{--                                </div><!-- end media -->--}}
+{{--                                <div class="blog-meta">--}}
+{{--                                    <h4><a href="tech-single.html" title="">We prepared the best 10 laptop presentations for you</a></h4>--}}
+{{--                                </div><!-- end meta -->--}}
+{{--                            </div><!-- end blog-box -->--}}
 
-                            <hr class="invis">
-                        </div><!-- end videos -->
-                    </div><!-- end widget -->
+{{--                            <hr class="invis">--}}
+{{--                        </div><!-- end videos -->--}}
+{{--                    </div><!-- end widget -->--}}
 
                     <div class="widget">
                         <h2 class="widget-title">Popular Posts</h2>
