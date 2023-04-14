@@ -13,8 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('content_banners', function (Blueprint $table) {
-            $table->integer('status');
+        Schema::create('category_images', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('slug');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('content_banners', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('category_images');
     }
 };

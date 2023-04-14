@@ -17,7 +17,7 @@
                     @endif
                 </div>
                 <!-- /.col-lg-12 -->
-                <table class="table table-bordered table-striped" id="datatable-buttons">
+                <table class="table table-bordered table-striped" id="datatable-fixed-header">
                     <thead>
                     <tr align="center">
                         <th>ID</th>
@@ -30,6 +30,9 @@
                     </tr>
                     </thead>
                     <tbody>
+                    <a href="{{route('users.create')}}">
+                        <button class="btn btn-success">Thêm người dùng</button>
+                    </a>
                     @foreach($users as $user)
                         <tr class="even gradeC" align="center">
                             <td>{{ $user->id }}</td>

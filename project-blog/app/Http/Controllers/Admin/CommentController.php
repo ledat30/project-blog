@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
+
 use Illuminate\Support\Facades\Redirect;
 
 class CommentController extends Controller

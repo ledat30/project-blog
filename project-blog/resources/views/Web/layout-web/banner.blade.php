@@ -28,19 +28,19 @@
                     </a>
                 </div>
             </div>
-            <div class="col-md-5">
-                <div class="full slider_cont_section">
-                    @foreach($conten as $ct)
-                    <h4>{{$ct->name}}</h4>
-                    <h3>{{$ct->title}}</h3>
-                    <h6>{!! $ct->content !!}</h6>
-                    @endforeach
-                    <div class="button_section">
-                        <a href="{{route('category.web')}}">Read More</a>
-                        <a href="{{route('contact.web')}}">Contact Us</a>
+                <div class="col-md-5">
+                    <div class="full slider_cont_section">
+                        @foreach($conten as $ct)
+                        <h4>{{$ct->name}}</h4>
+                        <h3>{{$ct->title}}</h3>
+                        <h6>{!! $ct->content !!}</h6>
+                        @endforeach
+                        <div class="button_section">
+                            <a href="{{route('category.web')}}">Read More</a>
+                            <a href="{{route('contact.web')}}">Contact Us</a>
+                        </div>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>

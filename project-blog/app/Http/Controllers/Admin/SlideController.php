@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+
+
 use App\Http\Controllers\Controller;
 use App\Models\Slide;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
@@ -18,7 +22,8 @@ class SlideController extends Controller
 
     public function create()
     {
-        return view('admin.slide.create');
+        $users = User::all();
+        return view('admin.slide.create',compact('users'));
     }
 
     public function store(Request $request)
@@ -51,6 +56,7 @@ class SlideController extends Controller
         Slide::create([
             'image' => $image,
             'name' => $request->name,
+            'user_id'=>$request->user_id,
             'status'=>$request->status,
         ]);
 

@@ -1,23 +1,23 @@
-<!-- Bootstrap -->
+{{--<!-- Bootstrap -->--}}
 <link href="{{asset('cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css')}}">
 <link href="{{asset('/Admin/vendors/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
-<!-- Font Awesome -->
+{{--<!-- Font Awesome -->--}}
 <link href="{{asset('/Admin/vendors/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-<!-- NProgress -->
+{{--<!-- NProgress -->--}}
 <link href="{{asset('/Admin/vendors/nprogress/nprogress.css')}}" rel="stylesheet">
-<!-- iCheck -->
+{{--<!-- iCheck -->--}}
 <link href="{{asset('/Admin/vendors/iCheck/skins/flat/green.css')}}" rel="stylesheet">
 
-<!-- bootstrap-progressbar -->
+{{--<!-- bootstrap-progressbar -->--}}
 <link href="{{asset('/Admin/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet">
-<!-- JQVMap -->
+{{--<!-- JQVMap -->--}}
 <link href="{{asset('/Admin/vendors/jqvmap/dist/jqvmap.min.css')}}" rel="stylesheet"/>
 <!-- bootstrap-daterangepicker -->
 <link href="{{asset('/Admin/vendors/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 
-<!-- Custom Theme Style -->
+{{--<!-- Custom Theme Style -->--}}
 <link href="{{asset('/Admin/build/css/custom.min.css')}}" rel="stylesheet">
-<!-- Datatables -->
+{{--<!-- Datatables -->--}}
 
 <link href="{{asset('/Admin/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
 <link href="{{asset('/Admin/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')}}" rel="stylesheet">

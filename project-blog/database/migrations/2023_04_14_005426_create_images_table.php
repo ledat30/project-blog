@@ -13,27 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('description')->nullable();
-            $table->longText('content')->nullable();
+            $table->string('name');
             $table->string('image')->nullable();
-            $table->integer('view_counts')->default(0);
             $table->unsignedBigInteger('user_id');
-            $table->boolean('new_post')->default(0);
-            $table->string('slug');
-            $table->unsignedBigInteger('category_id');
-            $table->boolean('highlight_post');
-            $table->integer('status');
+            $table->unsignedBigInteger('categoryimg_id');
             $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')->on('users')
                 ->cascadeOnDelete();
 
-            $table->foreign('category_id')
-                ->references('id')->on('categories')
+            $table->foreign('categoryimg_id')
+                ->references('id')->on('category_images')
                 ->cascadeOnDelete();
         });
     }
@@ -45,6 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('images');
     }
 };

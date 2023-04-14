@@ -2,21 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Slide extends Model
+class ImageModels extends Model
 {
-    protected $table = 'slides';
+    use HasFactory;
+    protected $table = 'images';
 
     protected $fillable = [
         'image',
         'name',
         'user_id',
+        'categoryimg_id',
         'status',
     ];
     public function image()
     {
-        return '/image/slide/'. $this->image;
+        return '/image/Hinh anh/'. $this->image;
     }
-
 }

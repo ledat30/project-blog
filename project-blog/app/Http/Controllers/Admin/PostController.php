@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
@@ -69,7 +71,7 @@ class PostController extends Controller
 
         Post::create([
             'title' => $request->title,
-            'description' => $request->description,
+            'description' =>  $request->get('description'),
             'content' => $request->get('content'),
             'image' => $image,
             'view_counts' => 0,

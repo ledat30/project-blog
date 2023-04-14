@@ -42,6 +42,14 @@
                             <label>Content</label>
                             <textarea id="content" name="content" class="ckeditor">{!! $conten->content !!}</textarea>
                         </div>
+                        <div class="form-group">
+                            <label>User</label>
+                            <select class="form-control" name="user_id" disabled>
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}" @if($post->user_id == $user->id) selected @endif >{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div>
                             <label>Status : </label>
                             <label class="radio-inline">

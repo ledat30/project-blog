@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+
+
 use App\Http\Controllers\Controller;
 use App\Models\ContentBanner;
+use App\Models\User;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
 
 class ContentBannerController extends Controller
@@ -17,7 +21,8 @@ class ContentBannerController extends Controller
 
     public function create()
     {
-        return view('admin.content-banner.create');
+        $users = User::all();
+        return view('admin.content-banner.create',compact('users'));
     }
 
     public function store(Request $request)
@@ -34,6 +39,7 @@ class ContentBannerController extends Controller
             'name' => $request->name,
             'title' => $request->title,
             'content' => $request->get('content'),
+            'user_id'=>$request->user_id,
             'status'=>$request->status,
         ]);
 

@@ -168,3 +168,5 @@ use Illuminate\Support\Facades\Route;
             ->name('web.contact.store');
 });
 
+        Route::get('web',[\App\Http\Controllers\Website\WebsiteControler::class,'web'])
+            ->name('web.user');

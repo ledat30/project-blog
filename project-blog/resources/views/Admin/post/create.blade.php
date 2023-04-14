@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <input class="form-control" name="description" placeholder="Please Enter Description" />
+                            <textarea id="description" name="description" class="ckeditor"></textarea>
                         </div>
                         <div class="form-group">Role:
                             New post:

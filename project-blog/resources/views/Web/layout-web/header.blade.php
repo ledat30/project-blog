@@ -162,6 +162,9 @@
                                     <a href="#">Giới thiệu</a>
                                 </li>
                                 <li>
+                                    <a href="#">Hình ảnh</a>
+                                </li>
+                                <li>
                                     <a href="{{route('contact.web')}}">Liên hệ</a>
                                 </li>
                                 @if(\Illuminate\Support\Facades\Auth::user())

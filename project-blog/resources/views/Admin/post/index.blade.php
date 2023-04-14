@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card-box table-responsive">
-                            <table class="table table-striped table-bordered" id="datatable-buttons" style="width:100%">
+                            <table class="table table-striped table-bordered" id="datatable-fixed-header" style="width:100%">
                                 <thead>
                                 <tr align="center">
                                     <th>ID</th>
@@ -43,6 +43,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <a href="{{route('amin.post.create')}}">
+                                    <button class="btn btn-success">Thêm bài đăng</button>
+                                </a>
                                 @foreach($posts as $post)
                                     <tr class="even gradeC" align="center">
                                         <td>{{$post->id }}</td>

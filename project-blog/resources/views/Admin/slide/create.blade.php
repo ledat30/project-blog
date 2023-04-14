@@ -31,6 +31,15 @@
                             <label>Image</label>
                             <input type="file" class="form-control" name="image" accept="image/*" />
                         </div>
+                        <div class="form-group">
+                            <label>User</label>
+                            <select class="form-control" name="user_id">
+                                <option>-Choose-</option>
+                                @foreach($users as $user)
+                                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div>
                             <label>Status : </label>
                             <label class="radio-inline">

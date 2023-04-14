@@ -18,7 +18,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('title');
             $table->longText('content')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->integer('status');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->cascadeOnDelete();
         });
     }
 

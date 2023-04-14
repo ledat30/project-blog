@@ -27,7 +27,9 @@
 {{--</div>--}}
 {{--<!-- end loader -->--}}
 <!-- header -->
+
 @include('Web.layout-web.header')
+{{--@include('Web.layout-web.header')--}}
 <!-- end header -->
 <!-- revolution slider -->
 @include('Web.layout-web.banner')

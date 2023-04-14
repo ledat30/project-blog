@@ -13,6 +13,7 @@ class ContentBanner extends Model
         'content',
         'name',
         'title',
+        'user_id',
         'status',
     ];
     public function detail($id){
